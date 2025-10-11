@@ -23,11 +23,12 @@ class FlatAdmin(admin.ModelAdmin):
         'rooms_number',
         'has_balcony'
     ]
+    raw_id_fields = ['liked_by']
 
 
 class ComplaintAdmin(admin.ModelAdmin):
     raw_id_fields = ['user', 'flat']
-    readonly_fields = ['text']
+    # readonly_fields = ['text']
 
 
 admin.site.register(Flat, FlatAdmin)
