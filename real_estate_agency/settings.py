@@ -9,7 +9,7 @@ env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=['localhost', '127.0.0.1'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
 
 SECRET_KEY = env.str('SECRET_KEY')
 
@@ -28,7 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'property.apps.PropertyConfig',
+    'phonenumber_field',
 ]
+
+PHONENUMBER_DB_FORMAT = env.str('PHONENUMBER_DB_FORMAT', 'E164')
+PHONENUMBER_DEFAULT_REGION = env.str('PHONENUMBER_DEFAULT_REGION', 'RU')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -39,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'real_estate_agency.urls'
 
