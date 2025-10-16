@@ -39,7 +39,7 @@ class OwnerAdmin(admin.ModelAdmin):
         'phonenumber',
         'pure_phone'
     ]
-    raw_id_fields = ['flats']
+    raw_id_fields = ['flat']
 
 
 admin.site.register(Flat, FlatAdmin)
