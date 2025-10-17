@@ -7,7 +7,6 @@ class FlatAdmin(admin.ModelAdmin):
     search_fields = [
         'town',
         'address',
-        'owner'
     ]
     readonly_fields = ['created_at']
     list_display = [
@@ -15,9 +14,7 @@ class FlatAdmin(admin.ModelAdmin):
         'price',
         'new_building',
         'construction_year',
-        'town',
-        'owners_phonenumber',
-        'owner_pure_phone'
+        'town'
     ]
     list_editable = ['new_building']
     list_filter = [
@@ -37,7 +34,7 @@ class OwnerAdmin(admin.ModelAdmin):
     list_display = [
         'full_name',
         'phonenumber',
-        'pure_phone'
+        'pure_phone',
     ]
     raw_id_fields = ['flat']
 
