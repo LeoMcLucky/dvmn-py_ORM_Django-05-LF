@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='complaint',
             name='complainant',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='complaints_made', to=settings.AUTH_USER_MODEL, verbose_name='Кто жаловался'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='complaints_made', to=settings.AUTH_USER_MODEL, verbose_name='Кто жаловался'),
         ),
     ]
